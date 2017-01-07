@@ -1,0 +1,42 @@
+
+body { 
+  padding-top: 60px; 
+}
+
+.navbar.speshul {
+  background-color: #2D3142;  /*dark blue */
+}
+
+.navbar-toggle {
+  margin-top: 13px;
+}
+
+.nav li a {
+  display: inline;
+  color: #EF8354!important; /* orange */
+}
+
+a.speshul{
+  color: #EF8354!important;
+}
+
+.navbar.speshul a:hover {
+  text-decoration: none;
+  color: #EF8354!important;
+}
+
+.btn.speshul {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-color: #2D3142;
+    border-radius: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.btn.speshul:hover, .btn.speshul:active, .btn.speshul:focus, .btn.speshul:active:focus {
+  background-color: #BFC0C0;
+}
+
