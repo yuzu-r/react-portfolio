@@ -3,7 +3,6 @@ var {Navbar, Nav, NavItem, Button} = require('react-bootstrap/lib');
 require('../main.css');
 
 var Header = React.createClass({
-  onAddRecipe: function(){},
   render: function(){
     return (
       <Navbar fixedTop collapseOnSelect className='speshul'>
