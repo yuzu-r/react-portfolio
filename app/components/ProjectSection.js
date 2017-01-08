@@ -6,14 +6,28 @@ var ProjectOverlay = require('./ProjectOverlay');
 var ProjectSection = React.createClass({
   getInitialState: function(){
     return {
+      currentProjectName: 'hro',
       currentProjectDescription: 'hi',
       overlayStyleClass: 'overlay overlay-hidden'
     }
   },
   getDefaultProps: function(){
     return {
-      projects: [ {name: 'hro', shortDesc: 'ecommerce website'}, 
-                  {name: 'kaizen', shortDesc: 'let the wookiee win'}]
+      projects: [ {name: 'hro', 
+                    shortDesc: 'ecommerce website',
+                    isDesktopOnly: 'false',
+                    mobileImage: '',
+                    desktopImage: '',
+                    liveLink: 'http://www.hroils.com'
+                  }, 
+                  {name: 'kaizen', 
+                    shortDesc: 'let the wookiee win',
+                    isDesktopOnly: 'true',
+                    mobileImage: '',
+                    desktopImage:'',
+                    liveLink: 'http://www.google.com'
+                  }
+                ]
     }
   },
   closeOverlay: function(){
