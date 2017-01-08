@@ -7,27 +7,56 @@ var ProjectOverlay = React.createClass({
       styleClass: 'overlay overlay-hidden'
     }
   },
+  componentWillMount: function(){
+    window.addEventListener("keyup", this.handleKeyUp);
+  },
+  componentWillUnmount: function(){
+    window.removeEventListener("keyup", this.handleKeyUp);
+  },
+  handleKeyUp: function(key){
+    if (key.keyCode === 27) {
+      this.props.closeMe(); // escape key close
+    }
+  },
   render: function(){
+    var currentProjectIndex = this.props.projects.findIndex(p => p.name === this.props.currentProject);
+    var currentProject = this.props.projects[currentProjectIndex];
+    var isDesktopOnly = currentProject.isDesktopOnly;
+    var overlayStyleDesktopOnly = isDesktopOnly ? 'style-desktop' : '';
+    var projectTextClass = 'project-text text-right ' + overlayStyleDesktopOnly;
+    var codeLink = null;
+    if (currentProject.githubLink) {
+      codeLink = <a href={currentProject.githubLink}>View code</a>     
+    }
     return (
-      <div id='pOverlay' className={this.props.styleClass}>
+      <div className={this.props.styleClass}>
         <a href='#' className='btn-close' onClick={this.props.closeMe}>&times;</a>
-        <div id= 'overlay-content' className="overlay-content">
-          {this.props.projectDescription}
+        <div className='overlay-content'>
+          <h4>{currentProject.shortDesc}</h4>
+          <br/>
+          <div className='project-flex'>
+            <div>
+              <img src={currentProject.desktopImage} alt='site screenshot' />
+            </div>
+            <div className='project-text'>
+              <a href={currentProject.liveLink}> Visit website</a>
+              <br />
+              {codeLink}
+            </div>
+          </div>
+          <div className='project-flex-right'>
+            <div>
+              <img src={currentProject.mobileImage} alt='link to site' />
+            </div>
+            <div className={projectTextClass}>
+              {currentProject.longDesc}
+            </div>         
+          </div>         
         </div>
+        <a href='#' className='close-link' onClick={this.props.closeMe}>close</a>
       </div>
     )
   }
 })
 
 module.exports = ProjectOverlay;
-
-// overlay state is in ProjectSection
-// it should just store the project name
-// the rest of the properties should come from a lookup of the prop, don't pass
-// style the overlay with two different styles,
-// responsive project will have screen shot of a mobile size shot and a desktop size shot
-// desktop project will have two full size screen shots
-// have a link to live site
-// have a link to github/codepen where appropriate - HRO will not have one
-// have a text description providing some details of the project and the skills used
-// make sure it stays responsive!

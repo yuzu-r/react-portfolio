@@ -7,25 +7,28 @@ var ProjectSection = React.createClass({
   getInitialState: function(){
     return {
       currentProjectName: 'hro',
-      currentProjectDescription: 'hi',
       overlayStyleClass: 'overlay overlay-hidden'
     }
   },
   getDefaultProps: function(){
     return {
       projects: [ {name: 'hro', 
-                    shortDesc: 'ecommerce website',
-                    isDesktopOnly: 'false',
-                    mobileImage: '',
-                    desktopImage: '',
-                    liveLink: 'http://www.hroils.com'
+                    shortDesc: 'hro, an e-commerce website',
+                    longDesc: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                    isDesktopOnly: false,
+                    mobileImage: 'http://www.lorempixel.com/125/220',
+                    desktopImage: 'http://www.lorempixel.com/320/280',
+                    liveLink: 'http://www.hroils.com',
+                    githubLink: null
                   }, 
                   {name: 'kaizen', 
-                    shortDesc: 'let the wookiee win',
-                    isDesktopOnly: 'true',
-                    mobileImage: '',
-                    desktopImage:'',
-                    liveLink: 'http://www.google.com'
+                    shortDesc: 'kaizen chess, play chess online',
+                    longDesc: 'Swiss chard ',
+                    isDesktopOnly: true,
+                    mobileImage: 'http://www.lorempixel.com/320/280',
+                    desktopImage:'http://www.lorempixel.com/320/280',
+                    liveLink: 'http://www.google.com',
+                    githubLink: 'http://www.shopify.com'
                   }
                 ]
     }
@@ -36,8 +39,8 @@ var ProjectSection = React.createClass({
     })
   },
   openOverlay: function(me){
-    console.log('open overlay', me)
     this.setState({
+      currentProjectName: me.name,
       currentProjectDescription: me.shortDesc,
       overlayStyleClass: 'overlay overlay-visible'
     })
@@ -53,7 +56,8 @@ var ProjectSection = React.createClass({
             openMe={this.openOverlay} />
           <ProjectOverlay 
             styleClass={this.state.overlayStyleClass}
-            projectDescription={this.state.currentProjectDescription}
+            currentProject={this.state.currentProjectName}
+            projects={this.props.projects}
             closeMe={this.closeOverlay} />
         </div>
       </div>
