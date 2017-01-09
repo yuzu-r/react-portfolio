@@ -17,6 +17,10 @@ a{
   margin-top: 13px;
 }
 
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
 .nav li a {
   display: inline;
   color: #EF8354!important; /* orange */
@@ -40,6 +44,7 @@ a{
     border-radius: 0;
     margin-top: 8px;
     margin-bottom: 8px;
+    color: #EF8354;
 }
 
 .btn.speshul:hover, .btn.speshul:active, .btn.speshul:focus, .btn.speshul:active:focus {

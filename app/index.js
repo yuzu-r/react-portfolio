@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var Main = require('./components/Main');
 
 ReactDOM.render(
-  <Main projects="asa da yo" />,
+  <Main />,
   document.getElementById('app')
 );
 
