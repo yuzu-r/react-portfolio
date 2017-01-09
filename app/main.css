@@ -48,7 +48,14 @@ a{
 
 .section.project {
   background-color: #BFC0C0;
+  padding: 20px 0;
 }
+
+.section.about {
+  background-color: #4F5D75;
+  padding: 30px 0;
+}
+
 
 .anchor-pad {
   display: block;
@@ -212,7 +219,7 @@ p {
 
 .section.contact {
   background: #4F5D75;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 
 .display-table{
