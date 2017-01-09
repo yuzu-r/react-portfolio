@@ -1,6 +1,12 @@
 
 body { 
   padding-top: 60px; 
+  background-color: #4F5D75;
+  font-size: 20px;
+}
+
+a{
+  color: #EF8354;
 }
 
 .navbar.speshul {
@@ -16,13 +22,13 @@ body {
   color: #EF8354!important; /* orange */
 }
 
-a.speshul{
-  color: #EF8354!important;
-}
-
 .navbar.speshul a:hover {
   text-decoration: none;
-  color: #EF8354!important;
+  color: #EF8354;
+}
+
+.btn {
+  letter-spacing: 1px;
 }
 
 .btn.speshul {
@@ -40,7 +46,7 @@ a.speshul{
   background-color: #BFC0C0;
 }
 
-.section {
+.section.project {
   background-color: #BFC0C0;
 }
 
@@ -56,6 +62,11 @@ h3 {
     letter-spacing: 1px;
     color: #EF8354;
 }
+
+p {
+  color: #FFFFFF;
+}
+
 
 .grid {
   padding: 20px 20px 100px 20px;
@@ -127,7 +138,6 @@ h3 {
   left: 0;
   top: 0;
   background-color: rgb(191,192,192); 
-  /*background-color: rgba(191,192,192, 0.95); */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; 
   text-align:center;
@@ -198,6 +208,27 @@ h3 {
   font-size: 48px;
   left: 95%;
   position: absolute;
+}
+
+.section.contact {
+  background: #4F5D75;
+  padding-bottom: 20px;
+}
+
+.display-table{
+  display: table;
+  table-layout: fixed;
+}
+
+.display-cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  text-align: right;
+}
+
+.spacer {
+  margin-right: 2px;
 }
 
 @media all and (max-width: 800px) {

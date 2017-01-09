@@ -47,7 +47,7 @@ var ProjectSection = React.createClass({
   },
   render: function(){
     return (
-      <div className='section'>
+      <div className='section project'>
         <span className='anchor-pad' id='portfolio'></span>
         <div className='container'>
           <h3 className='text-center'>MY PROJECTS</h3>

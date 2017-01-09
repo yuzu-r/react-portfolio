@@ -1,6 +1,7 @@
 var React = require('react');
 var Header = require('./Header');
 var ProjectSection = require('./ProjectSection');
+var ContactSection = require('./ContactSection');
 
 var Main = React.createClass({
   getInitialState: function(){
@@ -13,9 +14,7 @@ var Main = React.createClass({
       <div className='portfolio-container'>  
         <Header />
         <ProjectSection />
-        <div className='container'>
-          <h4>{this.state.greeting} {this.props.projects}</h4>
-        </div>
+        <ContactSection />
       </div>
     )
   }
