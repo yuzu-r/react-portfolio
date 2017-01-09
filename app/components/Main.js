@@ -1,5 +1,4 @@
 var React = require('react');
-var Header = require('./Header');
 var SimpleHeader = require('./SimpleHeader');
 var AboutSection = require('./AboutSection');
 var ProjectSection = require('./ProjectSection');
