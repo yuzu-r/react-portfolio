@@ -1,6 +1,12 @@
 
 body { 
   padding-top: 60px; 
+  background-color: #4F5D75;
+  font-size: 20px;
+}
+
+a{
+  color: #EF8354;
 }
 
 .navbar.speshul {
@@ -16,13 +22,13 @@ body {
   color: #EF8354!important; /* orange */
 }
 
-a.speshul{
-  color: #EF8354!important;
-}
-
 .navbar.speshul a:hover {
   text-decoration: none;
-  color: #EF8354!important;
+  color: #EF8354;
+}
+
+.btn {
+  letter-spacing: 1px;
 }
 
 .btn.speshul {
@@ -40,9 +46,16 @@ a.speshul{
   background-color: #BFC0C0;
 }
 
-.section {
+.section.project {
   background-color: #BFC0C0;
+  padding: 20px 0;
 }
+
+.section.about {
+  background-color: #4F5D75;
+  padding: 30px 0;
+}
+
 
 .anchor-pad {
   display: block;
@@ -56,6 +69,11 @@ h3 {
     letter-spacing: 1px;
     color: #EF8354;
 }
+
+p {
+  color: #FFFFFF;
+}
+
 
 .grid {
   padding: 20px 20px 100px 20px;
@@ -120,27 +138,30 @@ h3 {
 }
 
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
-    height: 100%;
-    width: 0;
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(191,192,192); 
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; 
+  text-align:center;
 }
 
 /* Position the content inside the overlay */
 .overlay-content {
-    color: orange;
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  color: #2D3142;
+  position: relative;
+  top: 10%; 
+  width: 70%; 
+  text-align: center; 
+  margin-top: 30px; 
+  padding-bottom: 15px;
+  left: 15%;
+  border-top: 1px solid #EF8354;
+  border-bottom: 1px solid #EF8354;
 }
 
 .overlay-hidden {
@@ -151,12 +172,112 @@ h3 {
   width: 100%;
 }
 
-.overlay .btn-close {
-    position: absolute;
-    top: 60px;
-    right: 45px;
-    font-size: 60px;
-    color: orange;
+.overlay a {
+  font-size: 20px;
+  color: #2D3142;
 }
 
+.project-flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
 
+.project-flex-right {
+  display: flex;
+  flex-flow: row-reverse wrap-reverse;
+  align-items: center;
+}
+
+.project-text {
+  padding-left: 20px;
+  max-height: 250px;
+  max-width: 60%;
+  font-size: 18px;
+}
+
+.text-right {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.project-text.style-desktop {
+  max-width: 50%;
+}
+
+.overlay a.close-link{
+  color: #EF8354;
+  font-size: 14px;
+}
+
+.overlay a.top-close-link {
+  color: #EF8354;
+  font-size: 48px;
+  left: 95%;
+  position: absolute;
+}
+
+.section.contact {
+  background: #4F5D75;
+  padding: 20px 0;
+}
+
+.display-table{
+  display: table;
+  table-layout: fixed;
+}
+
+.display-cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  text-align: right;
+}
+
+.spacer {
+  margin-right: 2px;
+}
+
+@media all and (max-width: 800px) {
+  .overlay-content {
+    width: 90%;
+    left: 5%;
+  }
+  .project-text {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .overlay a {font-size: 16px}
+  .overlay a.top-close-link {
+    font-size: 38px;
+    left:92%;
+  }
+
+  .project-flex {
+    flex-direction: column;
+  }
+  .project-flex-right{ 
+    flex-direction: column;
+  }
+  .overlay-content {
+    width: 100%;
+    left: 0%;
+    padding-bottom: 20px;
+  }
+  .project-text {
+    padding: 0;
+    max-width: 250px;
+    text-align: center;
+    font-size: 14px;
+  } 
+  .project-text.style-desktop {
+    max-width: 95%;
+    padding: 0;
+  }
+  .text-right{
+    padding: 0;
+    text-align: center;
+  }
+}
