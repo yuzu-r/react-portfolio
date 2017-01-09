@@ -127,7 +127,7 @@ h3 {
   left: 0;
   top: 0;
   background-color: rgb(191,192,192); 
-  background-color: rgba(191,192,192, 0.95); 
+  /*background-color: rgba(191,192,192, 0.95); */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; 
   text-align:center;
