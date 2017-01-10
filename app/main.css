@@ -267,6 +267,7 @@ p {
   color: #EF8354;
   font-size: 48px;
   left: 95%;
+  top: -16px;
   position: absolute;
 }
 
@@ -274,6 +275,10 @@ p {
   color: black;
   transition: 0.5s; 
   text-decoration: none;
+}
+
+.overlay h4 {
+  margin-top: 15px;
 }
 
 .section.contact {
@@ -312,8 +317,13 @@ p {
   .overlay a.top-close-link {
     font-size: 38px;
     left:92%;
+    top: -12px;
   }
-
+  .overlay h4 {
+    text-align: left;
+    margin-left: 3px;
+    margin-top: 12px;
+  }
   .project-flex {
     flex-direction: column;
   }

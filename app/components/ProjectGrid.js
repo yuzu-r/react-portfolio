@@ -15,8 +15,7 @@ var ProjectGrid = React.createClass({
           return(
             <li key={index} onClick={self.props.openMe.bind(null, p)}>
               <figure>
-                <img src='http://lorempixel.com/250/250' alt={alt} className={activeStyle} />
-                
+                <img src='http://lorempixel.com/250/250' alt={alt} className={activeStyle} />               
                 <figcaption className={activeStyle}>
                   <h4>{p.shortDesc}</h4>
                   <br/>

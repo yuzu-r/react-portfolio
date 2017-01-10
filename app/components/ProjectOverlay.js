@@ -31,7 +31,7 @@ var ProjectOverlay = React.createClass({
     return (
       <div className={this.props.styleClass}>
         <div className='overlay-content'>
-        <a href='#' className='top-close-link' onClick={this.props.closeMe}>&times;</a>
+          <a href='#' className='top-close-link' onClick={this.props.closeMe}>&times;</a>
           <h4>{currentProject.shortDesc}</h4>
           <br/>
           <div className='project-flex'>
