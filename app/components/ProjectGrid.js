@@ -22,10 +22,11 @@ var ProjectGrid = React.createClass({
             <li key={index} onClick={self.props.openMe.bind(null, p)}>
               <figure>
                 <img src='http://lorempixel.com/250/250' alt={alt} className={activeStyle} />
-                <i className="fa fa-info-circle fa-2x touch-info" aria-hidden="true" onClick={self.myAlert}></i>
+                
                 <figcaption className={activeStyle}>
                   <h4>{p.shortDesc}</h4>
                   <br/>
+                  <a href='#' className='more-info' onClick={self.myAlert}>alter</a>
                 </figcaption>
               </figure>
             </li>

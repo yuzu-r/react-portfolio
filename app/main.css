@@ -177,6 +177,11 @@ p {
 
 .touchevents .caption-style figcaption.show-figcaption  {
   opacity: 1;
+  z-index: 12;
+}
+
+.touchevents figcaption.show-figcaption a {
+  z-index: 22;
 }
 
 .overlay {
