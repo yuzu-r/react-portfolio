@@ -67,7 +67,7 @@ var ProjectSection = React.createClass({
     });      
   },
   openFigCaption: function(me){
-    if (this.state.imgStyleClass === 'show-figcaption') {
+    if (this.state.imgStyleClass === 'show-figcaption' && me.name === this.state.currentProjectName) {
       this.setState({
         imgStyleClass: null,
         figcaptionStyleClass: null
@@ -100,6 +100,7 @@ var ProjectSection = React.createClass({
           <ProjectGrid 
             projects={this.props.projects}
             openMe={this.openMe}
+            openOverlay={this.openOverlay}
             figcaptionStyleClass={this.state.figcaptionStyleClass}
             imgStyleClass={this.state.imgStyleClass}
             currentProjectName={this.state.currentProjectName} />

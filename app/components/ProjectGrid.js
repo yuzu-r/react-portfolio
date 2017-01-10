@@ -2,9 +2,6 @@ var React = require('react');
 require('../main.css');
 
 var ProjectGrid = React.createClass({
-  myAlert: function(){
-    alert('info clicked');
-  },
   render: function(){
     var self = this;
     return (
@@ -13,11 +10,8 @@ var ProjectGrid = React.createClass({
           var alt = 'img' + index;
           var activeStyle = null;
           if (p.name === self.props.currentProjectName) {
-            console.log('i found me and props style is', self.props.imgStyleClass);
-            // only set the class for currentProjectName! not all of them
             activeStyle = self.props.imgStyleClass;
           }
-          console.log(p.name, activeStyle);
           return(
             <li key={index} onClick={self.props.openMe.bind(null, p)}>
               <figure>
@@ -26,7 +20,7 @@ var ProjectGrid = React.createClass({
                 <figcaption className={activeStyle}>
                   <h4>{p.shortDesc}</h4>
                   <br/>
-                  <a href='#' className='more-info' onClick={self.myAlert}>alter</a>
+                  <a href="#portfolio" className='more-info' onClick={self.props.openOverlay.bind(null,p)}>more info...</a>
                 </figcaption>
               </figure>
             </li>
