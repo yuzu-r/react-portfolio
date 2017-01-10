@@ -114,13 +114,14 @@ p {
   z-index: 1;
   color: orange;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .touchevents .touch-info {
   position: absolute;
   left: 2%;
   bottom: 0;
-  z-index: 10;
+  z-index: 15;
   color: orange;
   visibility: visible;  
 }
@@ -148,19 +149,11 @@ p {
   z-index: 10;
 }
 
-.caption-style figure:hover img {
-  opacity: .1;
-}
-
-.caption-style figcaption {
+.caption-style figcaption {  /* dont check for events here, has to be right size no matter what */
   height: 100%;
   width: 100%;
   opacity: 0;
   backface-visibility: hidden;
-}
-
-.caption-style figure:hover figcaption {
-  opacity: 1;
 }
 
 .caption-style figure span {
@@ -168,6 +161,22 @@ p {
   bottom: 20px;
   left: 0px;
   padding-left: 20px;
+}
+
+.no-touchevents .caption-style figure:hover img {
+  opacity: .1;
+}
+
+.no-touchevents .caption-style figure:hover figcaption {
+  opacity: 1;
+}
+
+.touchevents .caption-style  img.show-figcaption{
+  opacity: .1;  
+}
+
+.touchevents .caption-style figcaption.show-figcaption  {
+  opacity: 1;
 }
 
 .overlay {

@@ -7,7 +7,9 @@ var ProjectSection = React.createClass({
   getInitialState: function(){
     return {
       currentProjectName: 'hro',
-      overlayStyleClass: 'overlay overlay-hidden'
+      overlayStyleClass: 'overlay overlay-hidden',
+      imgStyleClass: null,
+      figcaptionStyleClass: null,
     }
   },
   getDefaultProps: function(){
@@ -62,7 +64,32 @@ var ProjectSection = React.createClass({
       currentProjectName: me.name,
       currentProjectDescription: me.shortDesc,
       overlayStyleClass: 'overlay overlay-visible'
-    })
+    });      
+  },
+  openFigCaption: function(me){
+    if (this.state.imgStyleClass === 'show-figcaption') {
+      this.setState({
+        imgStyleClass: null,
+        figcaptionStyleClass: null
+      })
+    }
+    else {
+      this.setState({
+        currentProjectName: me.name,
+        imgStyleClass: 'show-figcaption',
+        figcaptionStyleClass: 'show-figcaption'
+      })      
+    }
+  },
+  openMe: function(me) {
+    // this is the click event from each project
+    // it does different things depending on touchevent or not touchevent
+    if (Modernizr.touchevents) {
+      this.openFigCaption(me);
+    }
+    else {
+      this.openOverlay(me);
+    }
   },
   render: function(){
     return (
@@ -72,7 +99,10 @@ var ProjectSection = React.createClass({
           <h3 className='text-center'>MY PROJECTS</h3>
           <ProjectGrid 
             projects={this.props.projects}
-            openMe={this.openOverlay} />
+            openMe={this.openMe}
+            figcaptionStyleClass={this.state.figcaptionStyleClass}
+            imgStyleClass={this.state.imgStyleClass}
+            currentProjectName={this.state.currentProjectName} />
           <ProjectOverlay 
             styleClass={this.state.overlayStyleClass}
             currentProject={this.state.currentProjectName}
