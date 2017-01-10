@@ -38,7 +38,7 @@ var ProjectOverlay = React.createClass({
             <div>
               <img src={currentProject.desktopImage} alt='site screenshot' />
             </div>
-            <div className='project-text'>
+            <div className='text-left'>
               <a href={currentProject.liveLink}>Visit website</a>
               <br />
               {codeLink}

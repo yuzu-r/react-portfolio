@@ -31,10 +31,16 @@ a{
   color: #EF8354;
 }
 
-.overlay a:hover, .contact a:hover {
+.contact a:hover {
   text-decoration: none;
-  color: white;
+  color: #EF8354;
   transition: 0.5s; 
+}
+
+.overlay a:hover {
+  color: black;
+  text-decoration: none;
+  transition: 0.5s;   
 }
 
 .btn {
@@ -54,11 +60,11 @@ a{
 }
 
 .btn.speshul:hover, .btn.speshul:active, .btn.speshul:focus, .btn.speshul:active:focus {
-  background-color: #BFC0C0;
+  background-color: #D0D1D1;
 }
 
 .section.project {
-  background-color: #BFC0C0;
+  background-color: #D0D1D1;
   padding: 20px 0;
 }
 
@@ -66,7 +72,6 @@ a{
   background-color: #4F5D75;
   padding: 30px 0;
 }
-
 
 .anchor-pad {
   display: block;
@@ -191,7 +196,8 @@ p {
   z-index: 100; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgb(191,192,192); 
+  /*background-color: rgb(208,209,209); */
+  background-color: #D0D1D1;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; 
   text-align:center;
@@ -221,7 +227,6 @@ p {
 
 .overlay a {
   font-size: 20px;
-  color: #2D3142;
 }
 
 .project-flex {
@@ -246,6 +251,11 @@ p {
 .text-right {
   text-align: right;
   padding-right: 20px;
+}
+
+.text-left{
+  text-align: left;
+  padding-left: 20px;
 }
 
 .project-text.style-desktop {
@@ -345,7 +355,7 @@ p {
     max-width: 95%;
     padding: 0;
   }
-  .text-right{
+  .text-right, .text-left{
     padding: 0;
     text-align: center;
   }
