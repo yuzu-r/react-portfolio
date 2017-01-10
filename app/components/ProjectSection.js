@@ -29,7 +29,26 @@ var ProjectSection = React.createClass({
                     desktopImage:'http://www.lorempixel.com/320/280',
                     liveLink: 'http://www.google.com',
                     githubLink: 'http://www.shopify.com'
-                  }
+                  },
+                  {name: 'react-hack', 
+                    shortDesc: 'react-hack, a dungeon crawler game',
+                    longDesc: 'This is a retro desktop-style homage to nethack with a little zork thrown in for good measure.',
+                    isDesktopOnly: true,
+                    mobileImage: 'http://www.lorempixel.com/320/280',
+                    desktopImage:'http://www.lorempixel.com/320/280',
+                    liveLink: 'http://www.google.com',
+                    githubLink: 'http://www.shopify.com'
+                  },
+                  {name: 'pomodoro', 
+                    shortDesc: 'pomodoro, a responsive timer',
+                    longDesc: 'set work and break intervals',
+                    isDesktopOnly: false,
+                    mobileImage: 'http://www.lorempixel.com/125/220',
+                    desktopImage:'http://www.lorempixel.com/320/280',
+                    liveLink: 'http://www.google.com',
+                    githubLink: 'http://www.shopify.com'
+                  },
+
                 ]
     }
   },
