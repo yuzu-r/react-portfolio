@@ -111,9 +111,18 @@ p {
   position: absolute;
   left: 2%;
   bottom: 0;
-  z-index: 10;
+  z-index: 1;
   color: orange;
   visibility: hidden;
+}
+
+.touchevents .touch-info {
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  z-index: 10;
+  color: orange;
+  visibility: visible;  
 }
 
 .grid figure img {
