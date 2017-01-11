@@ -3,6 +3,7 @@ body {
   padding-top: 60px; 
   background-color: #4F5D75;
   font-size: 20px;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 a{
@@ -18,12 +19,13 @@ a{
 }
 
 .navbar .navbar-collapse {
-    text-align: center;
+  text-align: center;
 }
 
 .nav li a {
   display: inline;
   color: #EF8354!important; /* orange */
+  font-family: 'Mallanna', sans-serif;
 }
 
 .navbar.speshul a:hover {
@@ -57,6 +59,8 @@ a{
     margin-top: 8px;
     margin-bottom: 8px;
     color: #EF8354;
+    font-family: 'Mallanna', sans-serif;  
+    font-size: 16px;
 }
 
 .btn.speshul:hover, .btn.speshul:active, .btn.speshul:focus, .btn.speshul:active:focus {
@@ -84,6 +88,7 @@ h3 {
     font-weight: 700;
     letter-spacing: 1px;
     color: #EF8354;
+    font-family: 'Mallanna', sans-serif;  
 }
 
 p {
