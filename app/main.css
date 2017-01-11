@@ -3,6 +3,7 @@ body {
   padding-top: 60px; 
   background-color: #4F5D75;
   font-size: 20px;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 a{
@@ -17,14 +18,31 @@ a{
   margin-top: 13px;
 }
 
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 .nav li a {
   display: inline;
   color: #EF8354!important; /* orange */
+  font-family: 'Mallanna', sans-serif;
 }
 
 .navbar.speshul a:hover {
   text-decoration: none;
   color: #EF8354;
+}
+
+.contact a:hover {
+  text-decoration: none;
+  color: #EF8354;
+  transition: 0.5s; 
+}
+
+.overlay a:hover {
+  color: black;
+  text-decoration: none;
+  transition: 0.5s;   
 }
 
 .btn {
@@ -40,14 +58,17 @@ a{
     border-radius: 0;
     margin-top: 8px;
     margin-bottom: 8px;
+    color: #EF8354;
+    font-family: 'Mallanna', sans-serif;  
+    font-size: 16px;
 }
 
 .btn.speshul:hover, .btn.speshul:active, .btn.speshul:focus, .btn.speshul:active:focus {
-  background-color: #BFC0C0;
+  background-color: #D0D1D1;
 }
 
 .section.project {
-  background-color: #BFC0C0;
+  background-color: #D0D1D1;
   padding: 20px 0;
 }
 
@@ -55,7 +76,6 @@ a{
   background-color: #4F5D75;
   padding: 30px 0;
 }
-
 
 .anchor-pad {
   display: block;
@@ -68,6 +88,7 @@ h3 {
     font-weight: 700;
     letter-spacing: 1px;
     color: #EF8354;
+    font-family: 'Mallanna', sans-serif;  
 }
 
 p {
@@ -86,7 +107,7 @@ p {
 .grid li {
   display: inline-block;
   width: 250px;
-  margin: 0;
+  margin: 0 7px 0 0;
   text-align: left;
   position: relative;
 }
@@ -94,6 +115,25 @@ p {
 .grid figure {
   margin: 0;
   position: relative;
+}
+
+.touch-info {
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  z-index: 1;
+  color: orange;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.touchevents .touch-info {
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  z-index: 15;
+  color: orange;
+  visibility: visible;  
 }
 
 .grid figure img {
@@ -111,23 +151,19 @@ p {
   color: white;
 }
 
+.caption-style figure:hover {
+  cursor: pointer;
+}
+
 .caption-style figure img{
   z-index: 10;
 }
 
-.caption-style figure:hover img {
-  opacity: .1;
-}
-
-.caption-style figcaption {
+.caption-style figcaption {  /* dont check for events here, has to be right size no matter what */
   height: 100%;
   width: 100%;
   opacity: 0;
   backface-visibility: hidden;
-}
-
-.caption-style figure:hover figcaption {
-  opacity: 1;
 }
 
 .caption-style figure span {
@@ -137,6 +173,27 @@ p {
   padding-left: 20px;
 }
 
+.no-touchevents .caption-style figure:hover img {
+  opacity: .1;
+}
+
+.no-touchevents .caption-style figure:hover figcaption {
+  opacity: 1;
+}
+
+.touchevents .caption-style  img.show-figcaption{
+  opacity: .1;  
+}
+
+.touchevents .caption-style figcaption.show-figcaption  {
+  opacity: 1;
+  z-index: 12;
+}
+
+.touchevents figcaption.show-figcaption a {
+  z-index: 22;
+}
+
 .overlay {
   height: 100%;
   width: 0;
@@ -144,7 +201,8 @@ p {
   z-index: 100; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgb(191,192,192); 
+  /*background-color: rgb(208,209,209); */
+  background-color: #D0D1D1;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; 
   text-align:center;
@@ -174,7 +232,6 @@ p {
 
 .overlay a {
   font-size: 20px;
-  color: #2D3142;
 }
 
 .project-flex {
@@ -201,6 +258,11 @@ p {
   padding-right: 20px;
 }
 
+.text-left{
+  text-align: left;
+  padding-left: 20px;
+}
+
 .project-text.style-desktop {
   max-width: 50%;
 }
@@ -210,11 +272,28 @@ p {
   font-size: 14px;
 }
 
+.overlay a.close-link:hover {
+  color: black;
+  transition: 0.5s; 
+  text-decoration: none;
+}
+
 .overlay a.top-close-link {
   color: #EF8354;
   font-size: 48px;
   left: 95%;
+  top: -16px;
   position: absolute;
+}
+
+.overlay a.top-close-link:hover {
+  color: black;
+  transition: 0.5s; 
+  text-decoration: none;
+}
+
+.overlay h4 {
+  margin-top: 15px;
 }
 
 .section.contact {
@@ -253,8 +332,13 @@ p {
   .overlay a.top-close-link {
     font-size: 38px;
     left:92%;
+    top: -12px;
   }
-
+  .overlay h4 {
+    text-align: left;
+    margin-left: 3px;
+    margin-top: 12px;
+  }
   .project-flex {
     flex-direction: column;
   }
@@ -276,7 +360,7 @@ p {
     max-width: 95%;
     padding: 0;
   }
-  .text-right{
+  .text-right, .text-left{
     padding: 0;
     text-align: center;
   }

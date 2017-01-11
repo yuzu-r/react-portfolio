@@ -7,7 +7,9 @@ var ProjectSection = React.createClass({
   getInitialState: function(){
     return {
       currentProjectName: 'hro',
-      overlayStyleClass: 'overlay overlay-hidden'
+      overlayStyleClass: 'overlay overlay-hidden',
+      imgStyleClass: null,
+      figcaptionStyleClass: null,
     }
   },
   getDefaultProps: function(){
@@ -16,8 +18,8 @@ var ProjectSection = React.createClass({
                     shortDesc: 'hro, an e-commerce website',
                     longDesc: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
                     isDesktopOnly: false,
-                    mobileImage: 'http://www.lorempixel.com/125/220',
-                    desktopImage: 'http://www.lorempixel.com/320/280',
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/hro_mobile_view_mini.png',
+                    desktopImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/hro_desktop_320x282.png',
                     liveLink: 'http://www.hroils.com',
                     githubLink: null
                   }, 
@@ -25,11 +27,30 @@ var ProjectSection = React.createClass({
                     shortDesc: 'kaizen chess, play chess online',
                     longDesc: 'Swiss chard ',
                     isDesktopOnly: true,
-                    mobileImage: 'http://www.lorempixel.com/320/280',
-                    desktopImage:'http://www.lorempixel.com/320/280',
-                    liveLink: 'http://www.google.com',
-                    githubLink: 'http://www.shopify.com'
-                  }
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/kaizen-chess-b.png',
+                    desktopImage:'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/kaizen-chess-a.png',
+                    liveLink: 'http://kaizen-chess.herokuapp.com',
+                    githubLink: 'https://github.com/yuzu-r/kaizen-chess'
+                  },
+                  {name: 'react-hack', 
+                    shortDesc: 'react-hack, a dungeon crawler game',
+                    longDesc: 'This is a retro desktop-style homage to nethack with a little zork thrown in for good measure.',
+                    isDesktopOnly: true,
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/react-hack-b.png',
+                    desktopImage:'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/react-hack-a.png',
+                    liveLink: 'https://codepen.io/yuzu-r/debug/rWvPXG',
+                    githubLink: 'https://codepen.io/yuzu-r/pen/rWvPXG'
+                  },
+                  {name: 'pomodoro', 
+                    shortDesc: 'pomodoro, a responsive timer',
+                    longDesc: 'set work and break intervals',
+                    isDesktopOnly: false,
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/pomodoro_p.png',
+                    desktopImage:'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/pomodoro_l.png',
+                    liveLink: 'https://codepen.io/yuzu-r/debug/ZpNZOJ',
+                    githubLink: 'https://codepen.io/yuzu-r/pen/ZpNZOJ'
+                  },
+
                 ]
     }
   },
@@ -43,7 +64,32 @@ var ProjectSection = React.createClass({
       currentProjectName: me.name,
       currentProjectDescription: me.shortDesc,
       overlayStyleClass: 'overlay overlay-visible'
-    })
+    });      
+  },
+  openFigCaption: function(me){
+    if (this.state.imgStyleClass === 'show-figcaption' && me.name === this.state.currentProjectName) {
+      this.setState({
+        imgStyleClass: null,
+        figcaptionStyleClass: null
+      })
+    }
+    else {
+      this.setState({
+        currentProjectName: me.name,
+        imgStyleClass: 'show-figcaption',
+        figcaptionStyleClass: 'show-figcaption'
+      })      
+    }
+  },
+  openMe: function(me) {
+    // this is the click event from each project
+    // it does different things depending on touchevent or not touchevent
+    if (Modernizr.touchevents) {
+      this.openFigCaption(me);
+    }
+    else {
+      this.openOverlay(me);
+    }
   },
   render: function(){
     return (
@@ -53,7 +99,11 @@ var ProjectSection = React.createClass({
           <h3 className='text-center'>MY PROJECTS</h3>
           <ProjectGrid 
             projects={this.props.projects}
-            openMe={this.openOverlay} />
+            openMe={this.openMe}
+            openOverlay={this.openOverlay}
+            figcaptionStyleClass={this.state.figcaptionStyleClass}
+            imgStyleClass={this.state.imgStyleClass}
+            currentProjectName={this.state.currentProjectName} />
           <ProjectOverlay 
             styleClass={this.state.overlayStyleClass}
             currentProject={this.state.currentProjectName}
