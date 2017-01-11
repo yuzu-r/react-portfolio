@@ -47,10 +47,11 @@ var ProjectOverlay = React.createClass({
           <div className='project-flex-right'>
             <div>
               <img src={currentProject.mobileImage} alt='link to site' />
+            
+              <div className={projectTextClass}>
+                {currentProject.longDesc}
+              </div>         
             </div>
-            <div className={projectTextClass}>
-              {currentProject.longDesc}
-            </div>         
           </div>         
           <br />
           <a href='#' className='close-link' onClick={this.props.closeMe}>close</a>

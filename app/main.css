@@ -248,8 +248,9 @@ p {
 
 .project-text {
   padding-left: 20px;
-  max-height: 250px;
-  max-width: 60%;
+  padding-top: 10px;
+  /*max-height: 250px;*/
+  /*max-width: 60%; */
   font-size: 18px;
 }
 
@@ -264,7 +265,7 @@ p {
 }
 
 .project-text.style-desktop {
-  max-width: 50%;
+  /*max-width: 50%; */
 }
 
 .overlay a.close-link{
@@ -284,6 +285,12 @@ p {
   left: 95%;
   top: -16px;
   position: absolute;
+}
+
+.overlay img{
+  float: right;
+  padding-top: 10px;
+  margin-left: 10px;
 }
 
 .overlay a.top-close-link:hover {
@@ -325,6 +332,15 @@ p {
   .project-text {
     font-size: 16px;
   }
+  .text-right{
+    padding-left: 0;
+  }
+  .project-text.style-desktop {
+    /* max-width: 40%; */
+    /*max-height: 250px; */
+    /*padding-right: 20px; */
+  }
+
 }
 
 @media all and (max-width: 500px) {
@@ -351,17 +367,27 @@ p {
     padding-bottom: 20px;
   }
   .project-text {
-    padding: 0;
     max-width: 250px;
     text-align: center;
     font-size: 14px;
   } 
   .project-text.style-desktop {
     max-width: 95%;
-    padding: 0;
   }
   .text-right, .text-left{
-    padding: 0;
+    padding: 10px;
     text-align: center;
   }
+  .overlay img{
+    float: none;
+  }
+
+
 }
+
+/* for medium and style-desktop, max width of 40% works better, currently 50 
+and there needs to be some space between the images.
+if it is over the max width it should go to text-align: center ;
+
+
+*/
