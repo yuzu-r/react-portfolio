@@ -16,7 +16,7 @@ var ProjectSection = React.createClass({
     return {
       projects: [ {name: 'hro', 
                     shortDesc: 'hroils.com, an e-commerce website',
-                    longDesc: '',
+                    longDesc: 'Starting with a domain name and logo, built out an online store on the Shopify platform with customized templates and the look and feel the owner was looking for.',
                     isDesktopOnly: false,
                     titleImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/hro-title.png',
                     mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/hro_mobile_view_mini.png',

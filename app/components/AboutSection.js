@@ -13,7 +13,7 @@ var AboutSection = React.createClass({
           </div>
             <div className="col-md-6 col-md-offset-1 display-cell">
             <p>Hi, I'm Tracy.</p>
-            <p>Here you'll find some of the projects I've worked on to level up my web development skills.</p>
+            <p>Here you'll find some of the projects I've worked on to level up my web development skills in Rails, JavaScript, and React.</p>
             </div>
           </div>
         </div>       

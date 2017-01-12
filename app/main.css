@@ -215,7 +215,7 @@ p {
   top: 10%; 
   width: 70%; 
   text-align: center; 
-  margin-top: 30px; 
+  margin-top: 10px; 
   padding-bottom: 15px;
   left: 15%;
   border-top: 1px solid #EF8354;
@@ -249,8 +249,6 @@ p {
 .project-text {
   padding-left: 20px;
   padding-top: 10px;
-  /*max-height: 250px;*/
-  /*max-width: 60%; */
   font-size: 18px;
 }
 
@@ -262,10 +260,6 @@ p {
 .text-left{
   text-align: left;
   padding-left: 20px;
-}
-
-.project-text.style-desktop {
-  /*max-width: 50%; */
 }
 
 .overlay a.close-link{
@@ -335,12 +329,6 @@ p {
   .text-right{
     padding-left: 0;
   }
-  .project-text.style-desktop {
-    /* max-width: 40%; */
-    /*max-height: 250px; */
-    /*padding-right: 20px; */
-  }
-
 }
 
 @media all and (max-width: 500px) {
@@ -367,13 +355,10 @@ p {
     padding-bottom: 20px;
   }
   .project-text {
-    max-width: 250px;
+    max-width: 95%;
     text-align: center;
     font-size: 14px;
   } 
-  .project-text.style-desktop {
-    max-width: 95%;
-  }
   .text-right, .text-left{
     padding: 10px;
     text-align: center;
@@ -381,7 +366,6 @@ p {
   .overlay img{
     float: none;
   }
-
 
 }
 
