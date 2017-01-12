@@ -8,6 +8,7 @@ var Main = React.createClass({
   render: function(){
     return (
       <div className='portfolio-container'>  
+        <span className="anchor-pad" id="about"></span>  
         <SimpleHeader />
         <AboutSection />
         <ProjectSection />

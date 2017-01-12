@@ -1,5 +1,6 @@
 var React = require('react');
 require('../main.css');
+require('array.prototype.findindex');
 
 var ProjectOverlay = React.createClass({
   getInitialState: function() {
