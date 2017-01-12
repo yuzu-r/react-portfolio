@@ -3,7 +3,14 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
   inject: 'body'
-})
+});
+var webpack = require('webpack');
+var ProductionInject = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify('production')
+  }
+});
+
 module.exports = {
   devtool: 'source-map',
   entry: [
@@ -20,6 +27,7 @@ module.exports = {
     ]
   },
   plugins: [
-    HtmlWebpackPluginConfig
+    HtmlWebpackPluginConfig,
+    ProductionInject
   ]
 }
