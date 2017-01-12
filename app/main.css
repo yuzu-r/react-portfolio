@@ -206,6 +206,7 @@ p {
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; 
   text-align:center;
+  -ms-overflow-style: scrollbar;
 }
 
 /* Position the content inside the overlay */
@@ -220,6 +221,7 @@ p {
   left: 15%;
   border-top: 1px solid #EF8354;
   border-bottom: 1px solid #EF8354;
+  -ms-overflow-style: scrollbar;
 }
 
 .overlay-hidden {
