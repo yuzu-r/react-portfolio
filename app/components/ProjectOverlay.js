@@ -27,7 +27,7 @@ var ProjectOverlay = React.createClass({
     var projectTextClass = 'project-text text-right ' + overlayStyleDesktopOnly;
     var codeLink = null;
     if (currentProject.githubLink) {
-      codeLink = <a href={currentProject.githubLink}>View code</a>     
+      codeLink = <a href={currentProject.githubLink} target='_blank'>View code</a>     
     }
     return (
       <div className={this.props.styleClass}>
@@ -39,7 +39,7 @@ var ProjectOverlay = React.createClass({
               <img src={currentProject.desktopImage} alt='site screenshot' />
             </div>
             <div className='text-left'>
-              <a href={currentProject.liveLink}>Visit website</a>
+              <a href={currentProject.liveLink} target='_blank'>Visit website</a>
               <br />
               {codeLink}
             </div>
