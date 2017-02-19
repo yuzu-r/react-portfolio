@@ -34,6 +34,16 @@ var ProjectSection = React.createClass({
                     liveLink: 'http://kaizen-chess.herokuapp.com',
                     githubLink: 'https://github.com/yuzu-r/kaizen-chess'
                   },
+                  {name: 'poke-trader', 
+                    shortDesc: 'poké trader, trade with your friends',
+                    longDesc: 'Are you missing Pokémon from your deck? Have duplicate cards that need a new home? Use Poké Trader to trade with other Pokémon TCG collectors. Built with Rails and React.',
+                    isDesktopOnly: false,
+                    titleImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/poke_square.png',
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/poke_mobile.png',
+                    desktopImage:'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/poke_desktop.png',
+                    liveLink: 'https://poke-trader-fcc.herokuapp.com/',
+                    githubLink: 'https://github.com/yuzu-r/poke-trade'
+                  },                  
                   {name: 'react-hack', 
                     shortDesc: 'react-hack, a dungeon crawler game',
                     longDesc: 'This is a retro desktop-style homage to NetHack with a little Zork thrown in for good measure. Built with React.',
@@ -44,6 +54,16 @@ var ProjectSection = React.createClass({
                     liveLink: 'https://codepen.io/yuzu-r/debug/rWvPXG',
                     githubLink: 'https://codepen.io/yuzu-r/pen/rWvPXG'
                   },
+                  {name: 'dogs', 
+                    shortDesc: 'dogs with friends, a social coordination app',
+                    longDesc: 'Dogs with Friends uses the Yelp API to look for dog parks in a specified area. Dog owners can then indicate which nearby parks they plan to visit. Built with Rails, React, and the Yelp API.',
+                    isDesktopOnly: false,
+                    titleImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/dwf_title.png',
+                    mobileImage: 'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/dwf_mobile.png',
+                    desktopImage:'https://s3-us-west-1.amazonaws.com/yuzu-r-codepen/portfolio/dwf_desktop.png',
+                    liveLink: 'https://dogs-with-friends.herokuapp.com',
+                    githubLink: 'https://github.com/yuzu-r/dogs-with-friends'
+                  },                  
                   {name: 'pomodoro', 
                     shortDesc: 'pomodoro, a responsive timer',
                     longDesc: 'A pomodoro timer with configurable work and break intervals and a sound option. Uses a jQuery mobile slider for friendly interval configuration on touch devices and canvas for graphics.',
