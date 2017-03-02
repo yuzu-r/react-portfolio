@@ -1,6 +1,7 @@
 var React = require('react');
 require('../main.css');
 require('array.prototype.findindex');
+var FadeInImage = require('./FadeInImage');
 
 var ProjectOverlay = React.createClass({
   getInitialState: function() {
@@ -29,6 +30,14 @@ var ProjectOverlay = React.createClass({
     if (currentProject.githubLink) {
       codeLink = <a href={currentProject.githubLink} target='_blank'>View code</a>     
     }
+    // if overlay is not showing, don't render the images.
+    // only render if showing to keep them current.
+    var desktopImage = null;
+    var mobileImage = null;
+    if (this.props.isOverlayShowing) {
+      desktopImage = <FadeInImage src={currentProject.desktopImage} />;
+      mobileImage = <FadeInImage src={currentProject.mobileImage} />;
+    }
     return (
       <div className={this.props.styleClass}>
         <div className='overlay-content'>
@@ -36,7 +45,7 @@ var ProjectOverlay = React.createClass({
           <h4>{currentProject.shortDesc}</h4>
           <div className='project-flex'>
             <div>
-              <img src={currentProject.desktopImage} alt='site screenshot' />
+              {desktopImage}
             </div>
             <div className='text-left'>
               <a href={currentProject.liveLink} target='_blank'>Visit website</a>
@@ -46,7 +55,7 @@ var ProjectOverlay = React.createClass({
           </div>
           <div className='project-flex-right'>
             <div>
-              <img src={currentProject.mobileImage} alt='link to site' />         
+              {mobileImage}
               <div className={projectTextClass}>
                 {currentProject.longDesc}
               </div>         

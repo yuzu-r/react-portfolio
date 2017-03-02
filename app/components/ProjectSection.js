@@ -10,6 +10,7 @@ var ProjectSection = React.createClass({
       overlayStyleClass: 'overlay overlay-hidden',
       imgStyleClass: null,
       figcaptionStyleClass: null,
+      isOverlayShowing: false
     }
   },
   getDefaultProps: function(){
@@ -80,14 +81,16 @@ var ProjectSection = React.createClass({
   },
   closeOverlay: function(){
     this.setState({
-      overlayStyleClass: 'overlay overlay-hidden'
+      overlayStyleClass: 'overlay overlay-hidden',
+      isOverlayShowing: false
     })
   },
   openOverlay: function(me){
     this.setState({
       currentProjectName: me.name,
       currentProjectDescription: me.shortDesc,
-      overlayStyleClass: 'overlay overlay-visible'
+      overlayStyleClass: 'overlay overlay-visible',
+      isOverlayShowing: true
     });      
   },
   openFigCaption: function(me){
@@ -132,7 +135,8 @@ var ProjectSection = React.createClass({
             styleClass={this.state.overlayStyleClass}
             currentProject={this.state.currentProjectName}
             projects={this.props.projects}
-            closeMe={this.closeOverlay} />
+            closeMe={this.closeOverlay}
+            isOverlayShowing={this.state.isOverlayShowing} />
         </div>
       </div>
     )
