@@ -17,6 +17,8 @@ a{
 
 .image-loaded {
   opacity: 1;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .navbar.speshul {

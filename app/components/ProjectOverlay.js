@@ -2,6 +2,8 @@ var React = require('react');
 require('../main.css');
 require('array.prototype.findindex');
 var FadeInImage = require('./FadeInImage');
+//var ImageFadeIn = require('./react-image-fade-in');
+import ImageFadeIn from 'react-image-fade-in';
 
 var ProjectOverlay = React.createClass({
   getInitialState: function() {
@@ -44,21 +46,31 @@ var ProjectOverlay = React.createClass({
           <a href='#' className='top-close-link' onClick={this.props.closeMe}>&times;</a>
           <h4>{currentProject.shortDesc}</h4>
           <div className='project-flex'>
-            <div>
-              {desktopImage}
-            </div>
-            <div className='text-left'>
-              <a href={currentProject.liveLink} target='_blank'>Visit website</a>
-              <br />
-              {codeLink}
+            <div className='row'>
+              <div className='col-xs-8'>
+                <div>
+                  {desktopImage}
+                </div>
+              </div>
+              <div className='col-xs-4'>
+                <div className='project-text text-left'>
+                  <a href={currentProject.liveLink} target='_blank'>Visit website</a>
+                  <br />
+                  {codeLink}
+                </div>
+              </div>
             </div>
           </div>
           <div className='project-flex-right'>
-            <div>
-              {mobileImage}
-              <div className={projectTextClass}>
-                {currentProject.longDesc}
-              </div>         
+            <div className='row'>
+              <div className='col-xs-8'>
+                <div className={projectTextClass}>
+                  {currentProject.longDesc}
+                </div>
+              </div>
+              <div className='col-xs-4'>
+                {mobileImage}
+              </div>
             </div>
           </div>         
           <a href='#' className='close-link' onClick={this.props.closeMe}>close</a>
